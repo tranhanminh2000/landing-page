@@ -25,13 +25,13 @@ const app = {
         document.onscroll = function(){
            let headerHeight = header.offsetHeight;
 
-        //    /* display header */
-        //    if(window.scrollY >= headerHeight){
-        //     header.style.position = 'fixed';
-        //    }
-        //    if(window.scrollY === 0){
-        //     header.style.position = 'relative';
-        //    }
+           /* display header */
+           if(window.scrollY >= headerHeight){
+            header.classList.add('fixed');
+           }
+           if(window.scrollY === 0){
+            header.classList.remove('fixed');
+           }
 
            /* display scroll-to-top btn */
            if(window.scrollY >= headerHeight){

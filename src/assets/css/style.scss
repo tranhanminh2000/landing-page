@@ -2,7 +2,7 @@
 
 /* Header */
 header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -14,7 +14,7 @@ header {
   justify-content: space-between;
   z-index: 99999;
   box-shadow: var(--box-shadow);
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   .logo {
     width: 15.5rem;
     color: var(--black);
@@ -27,19 +27,20 @@ header {
     border-radius: 0.3rem;
     padding: 1rem 0.7rem;
     color: var(--black);
+    transition: all 0.4s ease;
   }
 
   .navbar a:hover,
   .navbar a.active {
     color: #fff;
-    background: var(--green);
+    background: var(--main);
   }
 
   .icons .fa-times{
-    background: var(--green);
+    background: var(--main);
   }
   .icons #search-icon.active{
-    background: var(--green);
+    background: var(--main);
     transform: rotate(41deg);
   }
   .icons #menu-bars {
@@ -57,20 +58,30 @@ header {
     color: var(--black);
     border-radius: 50%;
     background: #eee;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
+  }
+  .icons a:hover, .icons i:hover{
+    background-color: var(--main);
   }
   .icons .fa-shopping-cart{
     position: relative;
 
   }
-  .icons .fa-shopping-cart:hover::after{
+
+  .icons .fa-shopping-cart::after{
     content: "";
-    border-width: 0 30px 30px 30px;
-    border-color: transparent transparent var(--green) transparent;
+    border-width: 0 20px 20px 20px;
+    border-color: transparent transparent var(--main) transparent;
     border-style: solid;
     position: absolute;
     bottom: -20px;
-    right: -8px;
+    right: 2px;
+    transform-origin: top;
+    transform: scale(0);
+    transition: all 0.3s ease;
+  }
+  .icons .fa-shopping-cart:hover::after{
+    transform: scale(1);
   }
   .icons .fa-shopping-cart .cart{
     width: 60rem;
@@ -83,14 +94,14 @@ header {
     opacity: 0;
     box-shadow: var(--box-shadow);
     border-radius: 0.3rem;
-    transition: all 0.3s ease-in;
+    transition: all 0.4s ease-in;
   }
   .icons .fa-shopping-cart:hover .cart{
     opacity: 1;
     transform: scale(1);
   }
   .icons .fa-shopping-cart .cart .cart-heading-top{
-    background: var(--green);
+    background: var(--main);
     color: white;
     font-size: 2rem;
   }
@@ -149,7 +160,24 @@ header {
   .icons .fa-shopping-cart .cart .cart-list-item .price{
     align-self: center;
   }
- 
+}
+header.fixed{
+  position: fixed;
+  transform-origin: top;
+  animation-name: dropdownHeader;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+  background: var(--main);
+}
+@keyframes dropdownHeader{
+  from{
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  to{
+    transform: scaleY(1);
+    opacity: 1;
+  }
 }
 
 /* search form */
@@ -160,14 +188,14 @@ header {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 72, 10, 0.8);
+  background-color: (var(--blackTransparent));
   z-index: 99999999;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   opacity: 0;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   #search-title {
     font-size: 3rem;
     color: #fff;
@@ -193,7 +221,7 @@ header {
     transition: all 0.2s ease;
   }
   #search-group label[for="search-box"]:hover {
-    color: var(--green);
+    color: var(--main);
   }
   #search-exit {
     color: #fff;
@@ -236,7 +264,7 @@ header {
   }
 
   .home-slider .slide .content span{
-    color: var(--green);
+    color: var(--main);
     font-size: 3rem;
   }
 
@@ -261,7 +289,7 @@ header {
     height: 100%;
     top: -100%;
     left: 0;
-    background: var(--green);
+    background: var(--main);
     padding: 1rem 1.5rem;
     box-sizing: border-box;
     transition: all 0.5s ease;
@@ -270,21 +298,22 @@ header {
     top: 0%;
   }
   .swiper-pagination-bullet-active{
-    background: var(--green);
+    background: var(--main);
   }
 }
 
 /* Section slogan  */
 .slogan{
+  padding: 2rem;
   text-align: center;
-  background: var(--green);
+  background: var(--main);
   h3{
     font-size: 3rem;
     color: white;
   }
   h2{
     margin: 1rem 0;
-    background: var(--green);
+    background: var(--main);
     text-align: center;
   }
   h2:before,
@@ -321,6 +350,7 @@ header {
   background-attachment: fixed;
   background-position: bottom;
   background-blend-mode: darken;
+  padding: 2rem;
   .content{
     height: 100%;
     color: #fff;
@@ -363,7 +393,7 @@ header {
   .title-dished{
     .sub-heading{
       text-align: center;
-      color: var(--green);
+      color: var(--main);
       font-size: 2rem;
     }
     .heading{
@@ -400,7 +430,7 @@ header {
         cursor: pointer;
       }
       .fa-eye:hover, .fa-heart:hover{
-        background: var(--green);
+        background: var(--main);
       }
       .fa-heart{
         left: -5rem;
@@ -428,7 +458,7 @@ header {
       span{
         margin-right: 1rem;
         font-size:2rem;
-        color:var(--green);
+        color:var(--main);
         font-weight: bolder;
       }
       .btn{
@@ -436,7 +466,7 @@ header {
         box-shadow: var(--box-shadow);
       }
       .btn:hover{
-        background: var(--green);
+        background: var(--main);
       }
     }
     .box:hover img{
@@ -456,7 +486,7 @@ header {
 .about{
   .sub-heading{
     font-size: 2rem;
-    color: var(--green);
+    color: var(--main);
     text-align: center;
   }
   .heading{
@@ -525,7 +555,7 @@ header {
   background: var(--black);
   .sub-heading{
     text-align: center;
-    color: var(--green);
+    color: var(--main);
     font-size: 2rem;
   }
   .heading{
@@ -560,7 +590,7 @@ header {
     }
 
     .content .stars{
-      color: var(--green);
+      color: var(--main);
       font-size: 1.6rem;
     }
 
@@ -576,7 +606,7 @@ header {
       margin-top: 3rem;
     }
     .content span{
-      color: var(--green);
+      color: var(--main);
       font-size: 2rem;
       font-weight: bold;
     }
@@ -589,7 +619,7 @@ header {
   .sub-heading{
     text-align: center;
     font-size: 2rem;;
-    color: var(--green);
+    color: var(--main);
   }
   .heading{
     color: var(--black);
@@ -646,7 +676,7 @@ header {
   background: #eee;
   .sub-heading{
     text-align: center;
-    color: var(--green);
+    color: var(--main);
     font-size: 2rem;
   }
   .heading{
@@ -697,25 +727,24 @@ header {
 footer{
   color: white;
   background: var(--black);
-  padding: 1rem 9%;
-
+  padding: 2rem 9%;
   .wrapper{
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -12px;
+    margin: 0 -50px;
     .detail-1{
       width: 30%;
-      padding: 0 12px;
+      padding: 0 50px;
       box-sizing: border-box;
     }
     .detail-2{
-      width: 20%;
-      padding: 0 12px;
+      width: 30%;
+      padding: 0 50px;
       box-sizing: border-box;
     }
     .detail-3{
-      width: 50%;
-      padding: 0 12px;
+      width: 40%;
+      padding: 0 50px;
       box-sizing: border-box;
       h3{
         font-size: 2rem;
@@ -724,13 +753,15 @@ footer{
     }
     .detail-1 h3, .detail-2 h3{
       font-size: 2rem;
+      border-bottom: .2rem solid ;
+      padding-bottom: 1rem;
     }
     .detail-1 .list, .detail-2 .list{
       list-style: circle;
     }
     .detail-1 .list .list-item, .detail-2 .list .list-item{
       font-size: 1.6rem;
-      line-height: 3rem;
+      line-height: 4rem;
     }
     
   }
@@ -739,8 +770,9 @@ footer{
 /* under-footer */
   .under-footer{
     text-align: center;
-    background-color: var(--green);
+    background-color: var(--main);
     color: #fff;
+    padding: 1rem 0;
   }
 
 /* scroll to top */
@@ -749,7 +781,7 @@ footer{
   position: fixed;
   bottom: 10px; right: 10px;
   padding: 2rem;
-  background-color: var(--green);
+  background-color: var(--main);
   border-radius: 100%;
   font-size: 1.6rem;
   line-height: 1rem;
