@@ -398,8 +398,8 @@ header .icons .fa-shopping-cart .cart .cart-list-item .price {
 /* section theme */
 .theme {
   height: 20rem;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), color-stop(0%, rgba(0, 0, 0, 0.5))), url("https://www.foodbusinessnews.net/ext/resources/2020/4/CoupleAtRestaurant_Lead.jpg?t=1587991293&width=1080");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 0%), url("https://www.foodbusinessnews.net/ext/resources/2020/4/CoupleAtRestaurant_Lead.jpg?t=1587991293&width=1080");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), color-stop(0%, rgba(0, 0, 0, 0.5))), url("../image/couple.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 0%), url("../image/couple.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
